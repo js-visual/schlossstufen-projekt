@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Frühling/Sommer Koblenz: heller, luftiger Hintergrund */
+    background: linear-gradient(180deg, #0b1b2b 0%, #0f2a3a 40%, #0c1f18 100%);
+    color: #f5f7f8;
+    line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 60vh;
+    min-height: 420px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.1) contrast(1.05);
+}
+
+/* Trennstreifen unter dem Hero Image (grau, subtil, modern) */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        rgba(210, 210, 210, 0.35),
+        rgba(160, 160, 160, 0.6),
+        rgba(210, 210, 210, 0.35),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+/* leichter Sommer-Overlay statt dunkel */
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* warmes, leicht sonniges Overlay */
+    background: linear-gradient(
+        135deg,
+        rgba(0, 40, 60, 0.55),
+        rgba(20, 80, 60, 0.45),
+        rgba(255, 180, 80, 0.15)
+    );
+
+    text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+}
+
+.overlay h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.overlay p {
+    font-size: 1.1rem;
+    color: #e8f3f5;
+}
+
+.authors {
+    margin-top: 15px;
+    color: #ffd36a;
+    font-weight: bold;
+}
+
+/* INFO SECTION */
+.info {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.info h2 {
+    margin-bottom: 20px;
+    color: #d9f3ff;
+}
+
+.info p {
+    color: #cfe6ea;
+    margin-bottom: 30px;
+}
+
+/* FACT BOXES */
+.facts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.fact {
+    background: linear-gradient(145deg, #0f2f3a, #123b2f);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 14px;
+    padding: 20px;
+    min-width: 140px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.fact span {
+    display: block;
+    color: #9cc7d1;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.fact strong {
+    color: #ffffff;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+
+    background: linear-gradient(135deg, #1ed760, #4ee08a);
+    color: #06210f;
+
+    padding: 16px 32px;
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+
+    transition: 0.25s ease;
+
+    box-shadow: 0 10px 20px rgba(30, 215, 96, 0.25);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(30, 215, 96, 0.35);
+}
+
+/* BUTTON ABSTAND */
+.button + .button {
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 25px;
+
+    text-align: center;
+    color: #9fb7bd;
+
+    background: rgba(0,0,0,0.2);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .overlay h1 {
+        font-size: 2.2rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .facts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fact {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 320px;
+    }
+}
